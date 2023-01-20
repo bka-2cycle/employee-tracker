@@ -138,7 +138,7 @@ function addDepartmentQuestion() {
       },
     ]).then((answers) => {
       queries.addDepartment(answers);
-      console.log("successfully added department");
+      console.log("successfully added a department");
       loadInitialQuestions();
     });
   });
@@ -172,7 +172,7 @@ function addRoleQuestion() {
       //Need code from here out
     ]).then((answers) => {
       queries.addRole(answers);
-      console.log("successfully added role");
+      console.log("Successfully added a role");
       loadInitialQuestions();
     });
   });
@@ -206,23 +206,23 @@ function addEmployeeQuestion() {
             {
               type: "input",
               name: "first_name",
-              message: "What is the employee/s first name?",
+              message: "What is the employee's first name?",
             },
             {
               type: "input",
               name: "last_name",
-              message: "What is the employee/s last name?",
+              message: "What is the employee's last name?",
             },
             {
               type: "list",
               name: "role_id",
-              message: "What is the employee/s role?",
+              message: "What is the employee's role?",
               choices: roleArray,
             },
             {
               type: "list",
               name: "manager_id",
-              message: "Who is the employee/s manager?",
+              message: "Who is the employee's manager?",
               choices: employeeArray,
             },
           ]).then((answers) => {
@@ -248,7 +248,7 @@ function updateEmployeeRole() {
       {
         type: "list",
         name: "employeeId",
-        message: "Which employee/s role would you like to update?",
+        message: "Which employee's role would you like to update?",
         choices: employeeArray,
       },
     ]).then(({ employeeId }) => {
@@ -269,7 +269,7 @@ function updateEmployeeRole() {
         ]).then(({ roleId }) => {
           queries
             .updateEmployeeRole(employeeId, roleId)
-            .then(() => console.log("Updated employee/s role"))
+            .then(() => console.log("Updated employee's role"))
             .then(() => loadInitialQuestions());
         });
       });
